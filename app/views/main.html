@@ -1,25 +1,20 @@
-<clndr clndr-object="clndr">
-  <div class="clndr-controls">
-    <div class="clndr-previous-button" ng-click="clndr.back()">
-      &lsaquo;
+<calendar calendar-object="calendar" class="calendar">
+  <div class="calendar-controls">
+    <div class="calendar-previous-button" ng-click="calendar.back()">
+      <span class="glyphicon glyphicon-arrow-left"></span>
     </div>
-    <div class="month">
-      {{month}}
+    <div class="calendar-next-button" ng-click="calendar.forward()">
+      <span class="glyphicon glyphicon-arrow-right"></span>
     </div>
-    <div class="clndr-next-button" ng-click="clndr.forward()">
-      &rsaquo;
+    <div class="date">
+      <span class="month">{{month}}</span> {{year}}
     </div>
   </div>
-  <div class="clndr-grid">
-    <div class="days-of-the-week">
-      <div class="header-day" ng-repeat="day in daysOfTheWeek track by $index">
-        {{day}}
-      </div>
-    </div>
+  <div class="calendar-grid">
     <div class="days">
       <div class="{{day.classes}}" ng-repeat="day in days">
         {{day.day}}
       </div>
     </div>
   </div>
-</clndr>
+</calendar>

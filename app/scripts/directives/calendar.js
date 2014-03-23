@@ -2,15 +2,15 @@
 'use strict';
 
 angular.module('angularCalendarApp')
-  .directive('clndr', function() {
+  .directive('calendar', function() {
     return {
       restrict: 'E',
       transclude: true,
       replace: true,
       scope: {
-        clndr: '=clndrObject'
+        calendar: '=calendarObject'
       },
-      template: '<div><div class="clndr_container"></div></div>',
+      template: '<div><div class="clndr"></div></div>',
       controller: function($scope, $element, $attrs, $transclude) {
         return $transclude(function(clone, scope) {
           var render;
@@ -18,10 +18,10 @@ angular.module('angularCalendarApp')
           render = function(data) {
             angular.extend(scope, data);
           };
-          $scope.clndr = $($element).find('.clndr_container').clndr({
+          $scope.calendar = $($element).find('.clndr').clndr({
             render: render
           });
-          return $scope.clndr;
+          return $scope.calendar;
         });
       }
     };
