@@ -27,6 +27,7 @@ body {
   display: inline-block;
 
   line-height: 3em;
+  user-select: none;
 }
 
 .calendar {
@@ -56,6 +57,7 @@ body {
 }
 
 .calendar-controls .calendar-previous-button,
+.calendar-controls .calendar-now-button,
 .calendar-controls .calendar-next-button {
   @include calendar-control();
 
@@ -84,6 +86,11 @@ body {
 
 .calendar-grid .days .day {
   @include day;
+}
+
+.calendar-grid .days .day.today {
+  background: hsl(350, 100, 95);
+  border-top: 3px solid hsl(350, 100, 80);
 }
 
 .calendar-grid .days .day .events {
