@@ -86,8 +86,15 @@ body {
   @include day;
 }
 
+.calendar-grid .days .day .events {
+  padding-left: .5em;
+
+  font-size: .8em;
+  text-align: left;
+}
+
 .calendar-grid .days .day.adjacent-month {
-  color: hsl(0, 0, 90);
+  opacity: .32;
 }
 
 // § //
